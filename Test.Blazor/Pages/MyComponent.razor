@@ -1,0 +1,23 @@
+﻿<div>
+
+    <input @bind="MyParameterProperty" />
+
+</div>
+
+@code {
+
+
+    private string myParameterProperty;
+    [Parameter]
+    public string MyParameterProperty {
+        get => myParameterProperty;
+        set { 
+            myParameterProperty = value; 
+            MyParameterPropertyChanged.InvokeAsync(myParameterProperty); 
+        }
+    }
+
+    [Parameter]
+    public EventCallback<string> MyParameterPropertyChanged { get; set; }
+
+}

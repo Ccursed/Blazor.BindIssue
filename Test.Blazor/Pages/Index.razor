@@ -1,0 +1,11 @@
+﻿@page "/"
+
+<MyComponent @bind-MyParameterProperty="MyModelProperty.MyProperty" />
+
+<MyComponent MyParameterProperty="Test" />
+
+@code {
+
+    public MyModel MyModelProperty { get; set; } = new MyModel();
+
+}
